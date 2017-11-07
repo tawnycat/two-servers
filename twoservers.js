@@ -7,9 +7,18 @@ http.createServer(compliments).listen(7000);
 http.createServer(insults).listen(7500);
 
 function compliments (req, res) {
-	res.end("Your hair looks nice today!");
+
+	var complimentArray = ["Your hair looks nice today!", "Cool shirt!", "You're doing great!", "Keep up the good work!"];
+
+	var randCompliment = complimentArray[Math.floor(Math.random() * complimentArray.length)];
+
+	res.end(randCompliment);
 };
 
 function insults (req, res) {
-	res.end("You have bad breath.");
+	var insultArray = ["You have bad breath.", "You left the house in that?", "Maybe give up.", "Not great."];
+
+	var randInsult = insultArray[Math.floor(Math.random() * insultArray.length)];
+
+	res.end(randInsult);
 };
